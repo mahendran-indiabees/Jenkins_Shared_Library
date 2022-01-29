@@ -1,4 +1,4 @@
-def call (def giturl, def branch) {
+def call (def giturl, def branch,def Git_Cred_ID) {
 	echo ""
 	echo "********** Git URL:  ${giturl} **********"
 	echo ""
@@ -7,7 +7,7 @@ def call (def giturl, def branch) {
 	if(giturl.contains("github.com"))
 	{
 	checkout([$class: 'GitSCM', branches: [[name: branch ]], extensions: [], userRemoteConfigs: [
-			[credentialsId: 'github', url: giturl]
+			[credentialsId: Git_Cred_ID, url: giturl]
 		]])
 	}
 	else
