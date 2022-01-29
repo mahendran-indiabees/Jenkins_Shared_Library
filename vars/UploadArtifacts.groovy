@@ -9,7 +9,7 @@ def call (def filetype,def filename,def artifact_id,def group_id,def Nexus_cred_
 		nexusVersion: 'nexus3', 
 		protocol: 'http', 
 		repository: repositoryName, 
-		version: BuildNumber
+		version: "${BuildNumber}"-SNAPSHOT
 	}
 	catch(Exception th) {
 		echo "Artifact upload failed. Please Check console log"
